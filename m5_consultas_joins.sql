@@ -1,6 +1,13 @@
 -------------------------------------------------------
 --  Cruzando tablas para enriquecer el análisis
 --------------------------------------------------------
+
+--------------------------------------------------------
+-- Contexto: Base Ventas_Tech_DB
+-- orden de corrida:
+--   - ventas_tech_db 1.1.sql
+--    - m4_consultas_negocio.sql
+--    - m5_consultas_joins.sql
 USE Ventas_Tech_DB;
 GO
 
