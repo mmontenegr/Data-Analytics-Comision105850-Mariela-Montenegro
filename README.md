@@ -1,7 +1,7 @@
 # Proyecto RetailPro
 Coderhouse - Comisión 105850 - Mariela Montenegro
 
-Para poder hacer funcional al proyecto se debe clonar el repo y dentro ejecutar los scripts con el siguiente orden:
+Para poder hacer funcional el proyecto se debe clonar el repo y dentro ejecutar los scripts de SqlServer con el siguiente orden:
 
 ```
 ventas_tech_db 1.1.sql
