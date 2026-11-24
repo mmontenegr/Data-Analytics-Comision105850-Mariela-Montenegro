@@ -22,6 +22,7 @@ ON v.id_territorio = t.id_territorio
 INNER JOIN Categorias ca
 ON  p.id_categoria = ca.id_categoria;
 
+-- Hallazgos: se listan todos las ventas registradas con información adicional de nombre del cliente, nombre, costo y categoria del producto, y region, zona y pais del territorio donde se realizaron cada venta
 
 --------------------------------------------------------
 -- Consulta 2 — Clientes sin ventas (LEFT JOIN) 
@@ -33,7 +34,7 @@ LEFT JOIN Ventas v
 ON c.id_cliente = v.id_cliente
 WHERE v.id_cliente IS NULL;
 
--- Resultado: todos los clientes registraron hicieron alguna compra
+-- Hallazgos: todos los clientes registrados hicieron alguna compra. La consulta no muestra registros
 
 --------------------------------------------------------
 -- Consulta 3 — Productos sin ventas (LEFT JOIN)
@@ -42,13 +43,13 @@ WHERE v.id_cliente IS NULL;
 
 SELECT p.nombre_producto, p.id_categoria, c.nombre_categoria, p.precio
 FROM Productos p
-LEFT JOIN Ventas v
-ON p.id_producto = v.id_producto
 INNER JOIN Categorias c
-ON p.id_categoria = c.id_categoria
+    ON p.id_categoria = c.id_categoria
+LEFT JOIN Ventas v
+    ON p.id_producto = v.id_producto
 WHERE v.id_producto IS NULL;
 
--- Resultado: Todos los productos fueron comprados en el período informado
+-- Hallazgos: Todos los productos fueron comprados en el período informado. La consulta no muestra registros
 
 --------------------------------------------------------
 --Consulta 4 — Consolidado por canal (UNION ALL)
@@ -64,3 +65,4 @@ FROM (
 ) AS consolidado
 GROUP BY canal;
 
+-- Hallazgos: El total de ventas hechas en forma Online ($3.714) representan el 57.6% del total. Las ventas en forma presencial suman un total de $2.730.
